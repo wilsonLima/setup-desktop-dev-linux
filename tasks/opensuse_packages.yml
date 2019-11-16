@@ -1,0 +1,25 @@
+---
+
+
+# Instalando pacotes de Dev
+
+- name: Instalando pacotes de Dev
+  zypper:
+    name: "{{ pacotes_dev }}"
+    state: latest
+    force: yes
+    oldpackage: yes
+  become: true
+  tags:
+    - dev
+
+# Instalando o Visual Studio Code 
+
+- name: Instalando o Visual Studio Code 
+  zypper:
+    name: code
+    state: present
+    force: yes
+  become: true
+  tags:
+    - vscode

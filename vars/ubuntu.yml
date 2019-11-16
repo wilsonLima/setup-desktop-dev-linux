@@ -1,0 +1,7 @@
+---
+
+pacotes_dev:
+  - meld
+  - git
+  - subversion
+  - vim

@@ -1,0 +1,11 @@
+---
+# vars file for setup-desktop-dev-linux
+
+dirs :
+  - "{{ ansible_user_dir }}/{{ root_dir }}/containers"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/projects"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/repositories"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/apache"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/eclipse"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/google"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/workspaces"

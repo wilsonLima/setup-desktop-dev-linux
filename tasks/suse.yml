@@ -1,0 +1,9 @@
+---
+
+- include_tasks: "opensuse_repos.yml"
+  tags: 
+   - main
+
+- include_tasks: "opensuse_packages.yml"
+  tags: 
+   - main

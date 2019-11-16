@@ -1,0 +1,24 @@
+---
+
+# Pacotes Dev
+
+- name: Instalando os pacotes Dev
+  apt:
+    name: "{{ pacotes_dev }}"
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - dev
+
+
+# Instalação do Visual Studio Code
+
+- name: Instalando o Visual Studio Code
+  apt:
+    name: code
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - vscode

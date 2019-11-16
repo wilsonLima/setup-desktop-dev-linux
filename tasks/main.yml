@@ -1,0 +1,33 @@
+---
+
+- name: Criando estrutura de diretorios
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    recurse: yes
+  with_items: "{{ dirs }}"
+  become: true
+  tags:
+    - main
+    - directory
+
+
+- name: Incluindo variaveis especificas do SO
+  include_vars: "{{ item }}"
+  with_first_found:
+   - ../vars/{{ ansible_distribution | lower }}.yml
+   - ../vars/{{ ansible_os_family | lower }}.yml
+  tags: 
+   - main
+
+
+- name: Incluindo tarefas especificas para o SO
+  include_tasks: "{{ item }}"
+  with_first_found:
+   - "{{ ansible_distribution | lower }}.yml"
+   - "{{ ansible_os_family | lower }}.yml"
+   - "os_defaults.yml"
+  tags: 
+   - main

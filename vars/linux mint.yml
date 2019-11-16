@@ -1,0 +1,14 @@
+---
+
+pacotes_dev:
+  - meld
+  - git
+  - subversion
+  - vim
+  
+
+mint_ubuntu_versions: {
+  "17" : "trusty",
+  "18" : "xenial",
+  "19" : "bionic"
+}

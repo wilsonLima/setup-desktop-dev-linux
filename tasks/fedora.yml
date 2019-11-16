@@ -1,0 +1,9 @@
+---
+
+- include_tasks: "fedora_repos.yml"
+  tags: 
+   - main
+
+- include_tasks: "fedora_packages.yml"
+  tags: 
+   - main

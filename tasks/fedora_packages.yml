@@ -1,0 +1,53 @@
+---
+
+
+  # Instalando os pacotes do KDE
+
+- name: "Instalando Pcaotes de Desenvolvimento"
+  dnf:
+    name: "{{ pacotes_dev }}"
+    state: present
+    disable_gpg_check: yes
+  become: true
+  tags:
+    - dev
+  
+# Instalando 'Development tools'
+
+- name: Instalando 'Development tools' package group
+  dnf:
+    name: '@Development tools'
+    state: present
+  become: true
+  tags:
+    - dev
+
+# Instalando 'C Development Tools and Libraries'
+
+- name: Instalando 'C Development Tools and Libraries' package group
+  dnf:
+    name: '@C Development Tools and Libraries'
+    state: present
+  become: true
+  tags:
+    - dev
+
+# Instalando 'RPM Development Tools'
+
+- name: Instalando 'RPM Development Tools' package group
+  dnf:
+    name: '@RPM Development Tools'
+    state: present
+  become: true
+  tags:
+    - dev
+
+# Instalando o Visual Studio Code
+
+- name: Instalando o Visual Studio Code
+  dnf:
+    name: code
+    state: present
+  become: true
+  tags:
+    - vscode
