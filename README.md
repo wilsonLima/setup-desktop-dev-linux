@@ -26,6 +26,12 @@ Tags da Role
 - vscode: Instala o Visual Studio Code.
 
 
+Variáveis da Role 
+--------------
+
+- root_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
+
+
 Dependências da Role 
 --------------
 
@@ -56,6 +62,12 @@ Exemplo de uso da Role, com as configurações padrão:
     - hosts: desktop
       roles:
          - setup-desktop-dev-linux
+
+Exemplo de uso da Role com variáveis:
+
+    - hosts: desktop
+      roles:
+         - { role: setup-desktop-dev-linux, root_dir: 'developer' }
 
 
 Exemplo de Comandos
