@@ -2,4 +2,7 @@
 
 pacotes_dev:
   - meld
-  - vim
+
+node_deps:
+  - gcc-c++
+  - make

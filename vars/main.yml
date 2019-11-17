@@ -1,5 +1,4 @@
 ---
-# vars file for setup-desktop-dev-linux
 
 dirs :
   - "{{ ansible_user_dir }}/{{ root_dir }}/containers"
@@ -8,4 +7,26 @@ dirs :
   - "{{ ansible_user_dir }}/{{ root_dir }}/tools/apache"
   - "{{ ansible_user_dir }}/{{ root_dir }}/tools/eclipse"
   - "{{ ansible_user_dir }}/{{ root_dir }}/tools/google"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/jetbrains"
   - "{{ ansible_user_dir }}/{{ root_dir }}/workspaces"
+
+
+pacotes_suse_dev:
+  - meld
+  - git
+  - subversion
+
+
+nodejs_versions: {
+  "8" : "8.x",
+  "10" : "10.x",
+  "11" : "11.x",
+  "12" : "12.x",
+  "13" : "13.x"
+}
+
+nodejs_suse_packages:
+  - "{{ nodejs_pac }}"
+  - "{{ nodejs_pac }}-devel"
+  - "{{ nodejs_pac }}-docs"
+  - "npm{{ nodejs_suse_version }}"

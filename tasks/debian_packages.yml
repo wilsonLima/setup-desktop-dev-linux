@@ -10,6 +10,33 @@
   become: true
   tags:
     - dev
+    - nodejs
+
+
+# Instalação do Vim
+
+- name: Instalando o Vim
+  apt:
+    name: vim
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - vim
+    - editors
+
+
+# Instalação do Atom
+
+- name: Instalando o Atom
+  apt:
+    name: atom
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - atom
+    - editors
 
 
 # Instalação do Visual Studio Code
@@ -21,4 +48,5 @@
     update_cache: yes
   become: true
   tags:
+    - editors
     - vscode

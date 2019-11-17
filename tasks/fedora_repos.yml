@@ -1,5 +1,31 @@
 ---
 
+# Adicionando o repositorio do Atom
+
+- name: Importando a chave do repositorio do Atom
+  rpm_key:
+    key: https://packagecloud.io/AtomEditor/atom/gpgkey
+    state: present
+  become: true
+  tags:
+    - repo
+    - editors
+    - vscode
+
+- name: Copiando arquivo de repositório do Atom
+  copy:
+    src: atom-rpm.repo
+    dest: /etc/yum.repos.d/atom.repo
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  tags:
+    - repo
+    - editors
+    - vscode
+
+
 # Adicionando o repositorio do Visual Studio Code
 
 - name: Importando a chave do repositorio do Visual Studio Code
@@ -9,6 +35,7 @@
   become: true
   tags:
     - repo
+    - editors
     - vscode
 
 - name: Copiando arquivo de repositório do Visual Studio Code
@@ -21,4 +48,5 @@
   become: true
   tags:
     - repo
+    - editors
     - vscode

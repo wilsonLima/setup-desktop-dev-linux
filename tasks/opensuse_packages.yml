@@ -5,13 +5,40 @@
 
 - name: Instalando pacotes de Dev
   zypper:
-    name: "{{ pacotes_dev }}"
+    name: "{{ pacotes_suse_dev }}"
     state: latest
     force: yes
     oldpackage: yes
   become: true
   tags:
     - dev
+
+
+# Instalando o Vim
+
+- name: Instalando o Vim
+  zypper:
+    name: vim
+    state: present
+    force: yes
+  become: true
+  tags:
+    - vim
+    - editors
+
+
+# Instalando o Atom
+
+- name: Instalando o Atom
+  zypper:
+    name: atom
+    state: present
+    force: yes
+  become: true
+  tags:
+    - atom
+    - editors
+
 
 # Instalando o Visual Studio Code 
 
@@ -22,4 +49,6 @@
     force: yes
   become: true
   tags:
+    - editors
     - vscode
+

@@ -42,6 +42,31 @@
   tags:
     - dev
 
+
+# Instalando o Vim
+
+- name: Instalando o Vim
+  dnf:
+    name: vim
+    state: present
+  become: true
+  tags:
+    - vim
+    - editors
+
+
+# Instalando o Atom
+
+- name: Instalando o Atom
+  dnf:
+    name: atom
+    state: present
+  become: true
+  tags:
+    - atom
+    - editors
+
+
 # Instalando o Visual Studio Code
 
 - name: Instalando o Visual Studio Code
@@ -50,4 +75,5 @@
     state: present
   become: true
   tags:
+    - editors
     - vscode

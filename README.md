@@ -6,9 +6,9 @@ Role do Ansible com passos para a pós-instalação de Desktops Linux com progra
 Distribuições Suportadas pela Role
 ------------
 
-- Fedora 28 ou superior
-- Linux Mint 19.2 ou superior
-- openSUSE Leap 42 ou superior
+- Fedora 30 ou inferior
+- Linux Mint 19.1 ou inferior
+- openSUSE Leap 15.0 ou superior
 - openSUSE Tumbleweed
 - Ubuntu 18.04 ou superior
 
@@ -23,12 +23,18 @@ Tags da Role
 - repo: Inclui todos os repositórios da role no Sistema.
   
 - dev: Instala os pacotes de desenvolvimento.
-- vscode: Instala o Visual Studio Code.
+- editors: Instala os editores de texto
+- vim: Instala o editor de texto Vim.
+- atom: Instala o editor de texto Atom.
+- vscode: Instala o editor de texto Visual Studio Code.
+
+- nodejs: Instala os componentes do Nodejs.
 
 
 Variáveis da Role 
 --------------
 
+- nodejs_version: Versão do Nodejs (Válida somente para distribuições baseados no Debian e Red Hat). Possíveis valores são 8, 10, 11, 12 ou 13, o valor padrão: 13.
 - root_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
 
 

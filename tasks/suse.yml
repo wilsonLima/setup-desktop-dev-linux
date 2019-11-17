@@ -4,6 +4,17 @@
   tags: 
    - main
 
+
 - include_tasks: "opensuse_packages.yml"
+  tags: 
+   - main
+
+
+- include_tasks: "opensuse_python.yml"
+  tags: 
+   - main
+
+
+- include_tasks: "opensuse_nodejs.yml"
   tags: 
    - main

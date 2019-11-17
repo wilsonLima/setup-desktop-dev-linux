@@ -4,6 +4,17 @@
   tags: 
    - main
 
+
 - include_tasks: "fedora_packages.yml"
+  tags: 
+   - main
+
+
+- include_tasks: "fedora_python.yml"
+  tags: 
+   - main
+
+
+- include_tasks: "fedora_nodejs.yml"
   tags: 
    - main

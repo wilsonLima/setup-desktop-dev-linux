@@ -1,6 +1,31 @@
 ---
 
-# Repositorio do Visual Studio Code
+# Repositorio do Atom
+
+- name: Importando a chave do repositorio do Atom
+  apt_key: 
+    url: https://packagecloud.io/AtomEditor/atom/gpgkey
+    state: present
+  become: true
+  tags:
+    - repo
+    - editors
+    - atom
+
+- name: Adicionando o Repositorio do Atom
+  apt_repository:
+    repo: "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
+    state: present
+    filename: atom
+    update_cache: yes
+  become: true
+  tags:
+    - repo
+    - editors
+    - atom
+
+
+  # Repositorio do Visual Studio Code
 
 - name: Importando a chave do repositorio do Visual Studio Code
   apt_key: 
@@ -9,6 +34,7 @@
   become: true
   tags:
     - repo
+    - editors
     - vscode
 
 - name: Adicionando o Repositorio do Visual Studio Code
@@ -20,4 +46,5 @@
   become: true
   tags:
     - repo
+    - editors
     - vscode

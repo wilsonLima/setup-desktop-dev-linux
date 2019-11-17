@@ -1,0 +1,12 @@
+---
+
+# Instalando o Nodejs
+
+- name: Instalando o Nodejs
+  zypper:
+    name: "{{ nodejs_suse_packages }}"
+    state: present
+    force: yes
+  become: true
+  tags:
+    - nodejs

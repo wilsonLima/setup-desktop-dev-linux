@@ -4,9 +4,12 @@ pacotes_dev:
   - meld
   - git
   - subversion
-  - vim
-  
+  - python-software-properties
+  - build-essential
+  - apt-transport-https
+  - ca-certificates
 
+  
 mint_ubuntu_versions: {
   "17" : "trusty",
   "18" : "xenial",

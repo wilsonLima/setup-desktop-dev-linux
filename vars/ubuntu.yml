@@ -4,4 +4,6 @@ pacotes_dev:
   - meld
   - git
   - subversion
-  - vim
+  - build-essential
+  - apt-transport-https
+  - ca-certificates

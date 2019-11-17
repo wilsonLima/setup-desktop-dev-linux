@@ -1,5 +1,31 @@
 ---
 
+# Adicionando o repositorio do Atom
+
+
+- name: Importando a chave do repositorio do Atom
+  rpm_key:
+    key: https://packagecloud.io/AtomEditor/atom/gpgkey
+    state: present
+  become: true
+  tags:
+    - repo
+    - atom
+
+
+- name: Copiando arquivo de repositório do Atom
+  copy:
+    src: atom-opensuse.repo
+    dest: /etc/zypp/repos.d/atom.repo
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  tags:
+    - repo
+    - atom
+
+
 # Adicionando o repositorio do Visual Studio Code
 
 - name: Importando a chave do repositorio do Visual Studio Code
@@ -13,7 +39,7 @@
 
 - name: Copiando arquivo de repositório do Visual Studio Code
   copy:
-    src: vscode-rpm.repo
+    src: vscode-opensuse.repo
     dest: /etc/zypp/repos.d/vscode.repo
     owner: root
     group: root
@@ -22,6 +48,7 @@
   tags:
     - repo
     - vscode
+
 
 # Atualizando todos os repositorios
 
@@ -33,3 +60,5 @@
   become: true
   tags:
     - repo
+    - atom
+    - vscode
