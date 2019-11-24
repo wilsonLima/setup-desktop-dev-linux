@@ -30,6 +30,9 @@ nodejs_versions: {
   "13" : "13.x"
 }
 
+nodejs_deb_packages:
+  - nodejs
+  - npm
 
 nodejs_suse_packages:
   - "{{ nodejs_pac }}"

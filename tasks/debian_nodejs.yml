@@ -2,6 +2,7 @@
 
 
 - name: "Baixando o Script de Instalacao do Nodejs versão {{ nodejs_version }}"
+  when: not ansible_distribution_release == "tina"
   get_url:
    url: "https://deb.nodesource.com/setup_{{ nodejs_versions[nodejs_version] }}"
    dest: "/tmp/setup_nodejs.sh"
@@ -11,6 +12,7 @@
 
 
 - name: "Executando o Script de Instalacao do Nodejs versão {{ nodejs_version }}"
+  when: not ansible_distribution_release == "tina"
   command: "bash /tmp/setup_nodejs.sh"
   become: true
   tags:
@@ -18,8 +20,20 @@
 
 
 - name: "Instalando o Nodejs versão {{ nodejs_version }}"
+  when: not ansible_distribution_release == "tina"
   apt:
     name: nodejs
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - nodejs
+
+
+- name: "Instalando o Nodejs"
+  when: ansible_distribution_release == "tina"
+  apt:
+    name: "{{ nodejs_deb_packages }}"
     state: present
     update_cache: yes
   become: true

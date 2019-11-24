@@ -7,7 +7,7 @@ Distribuições Suportadas pela Role
 ------------
 
 - Fedora 30 ou inferior
-- Linux Mint 19.1 ou inferior
+- Linux Mint 19.2 ou inferior
 - openSUSE Leap 15.0 ou superior
 - openSUSE Tumbleweed
 - Ubuntu 18.04 ou superior
