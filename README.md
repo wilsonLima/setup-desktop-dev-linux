@@ -28,7 +28,10 @@ Tags da Role
 - atom: Instala o editor de texto Atom.
 - vscode: Instala o editor de texto Visual Studio Code.
 
+- python: Instala os componentes do Python 3.
 - nodejs: Instala os componentes do Nodejs.
+- eslint: Instala o componentes eslint via NPM.
+- gitignore: Instala o componentes gitignore via NPM.
 
 
 Variáveis da Role 

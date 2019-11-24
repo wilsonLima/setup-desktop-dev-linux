@@ -1,0 +1,10 @@
+---
+
+- name: "Instalando os pacotes do Python 3"
+  dnf:
+    name: "{{ python_packages }}"
+    state: present
+    disable_gpg_check: yes
+  become: true
+  tags:
+    - python

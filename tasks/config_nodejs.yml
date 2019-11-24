@@ -1,0 +1,20 @@
+---
+
+- name: "Instalando pacote eslint pelo NPM"
+  npm:
+    name: eslint
+    global: yes
+  become: true
+  tags:
+    - nodejs
+    - eslint
+
+
+- name: "Instalando pacote gitignore pelo NPM"
+  npm:
+    name: gitignore
+    global: yes
+  become: true
+  tags:
+    - nodejs
+    - gitignore

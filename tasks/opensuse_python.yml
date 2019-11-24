@@ -1,0 +1,10 @@
+---
+
+- name: "Instalando os pacotes do Python 3"
+  zypper:
+    name: "{{ python_packages }}"
+    state: latest
+    force: yes
+  become: true
+  tags:
+    - python

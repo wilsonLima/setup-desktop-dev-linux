@@ -10,6 +10,11 @@
    - main
 
 
+- include_tasks: "debian_python.yml"
+  tags: 
+   - main
+
+
 - include_tasks: "debian_nodejs.yml"
   tags: 
    - main
