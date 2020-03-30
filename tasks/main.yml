@@ -31,7 +31,3 @@
    - "os_defaults.yml"
   tags: 
    - main
-   
-- include_tasks: "config_nodejs.yml"
-  tags: 
-   - main

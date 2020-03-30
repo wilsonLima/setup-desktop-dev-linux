@@ -1,4 +1,3 @@
 ---
 
-- name: Distribuição Linux não suportada
-  register: os_default
+test_var: test

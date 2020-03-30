@@ -1,19 +1,58 @@
 ---
 
-- include_tasks: "fedora_repos.yml"
-  tags: 
-   - main
+
+# Instalando os pacotes do KDE
+
+- name: "Instalando Pcaotes de Desenvolvimento"
+  dnf:
+    name: "{{ pacotes_dev }}"
+    state: present
+    disable_gpg_check: yes
+  become: true
+  tags:
+    - dev
 
 
-- include_tasks: "fedora_packages.yml"
-  tags: 
-   - main
+# Instalando 'Development tools'
+
+- name: Instalando 'Development tools' package group
+  dnf:
+    name: '@Development tools'
+    state: present
+  become: true
+  tags:
+    - dev
 
 
-- include_tasks: "fedora_python.yml"
-  tags: 
-   - main
+# Instalando 'C Development Tools and Libraries'
 
-- include_tasks: "fedora_nodejs.yml"
-  tags: 
-   - main
+- name: Instalando 'C Development Tools and Libraries' package group
+  dnf:
+    name: '@C Development Tools and Libraries'
+    state: present
+  become: true
+  tags:
+    - dev
+
+
+# Instalando 'RPM Development Tools'
+
+- name: Instalando 'RPM Development Tools' package group
+  dnf:
+    name: '@RPM Development Tools'
+    state: present
+  become: true
+  tags:
+    - dev
+
+
+# Instalando o Vim
+
+- name: Instalando o Vim
+  dnf:
+    name: vim
+    state: present
+  become: true
+  tags:
+    - vim
+

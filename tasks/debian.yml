@@ -1,20 +1,25 @@
 ---
 
-- include_tasks: "debian_repos.yml"
-  tags: 
-   - main
+
+# Pacotes Dev
+
+- name: Instalando os pacotes Dev
+  apt:
+    name: "{{ pacotes_dev }}"
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - dev
 
 
-- include_tasks: "debian_packages.yml"
-  tags: 
-   - main
+# Instalação do Vim
 
-
-- include_tasks: "debian_python.yml"
-  tags: 
-   - main
-
-
-- include_tasks: "debian_nodejs.yml"
-  tags: 
-   - main
+- name: Instalando o Vim
+  apt:
+    name: vim
+    state: present
+    update_cache: yes
+  become: true
+  tags:
+    - vim

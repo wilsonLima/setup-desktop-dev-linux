@@ -1,20 +1,26 @@
 ---
 
-- include_tasks: "opensuse_repos.yml"
-  tags: 
-   - main
+
+# Instalando pacotes de Dev
+
+- name: Instalando pacotes de Dev
+  zypper:
+    name: "{{ pacotes_suse_dev }}"
+    state: latest
+    force: yes
+    oldpackage: yes
+  become: true
+  tags:
+    - dev
 
 
-- include_tasks: "opensuse_packages.yml"
-  tags: 
-   - main
+# Instalando o Vim
 
-
-- include_tasks: "opensuse_python.yml"
-  tags: 
-   - main
-
-
-- include_tasks: "opensuse_nodejs.yml"
-  tags: 
-   - main
+- name: Instalando o Vim
+  zypper:
+    name: vim
+    state: present
+    force: yes
+  become: true
+  tags:
+    - vim

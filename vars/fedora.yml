@@ -2,7 +2,5 @@
 
 pacotes_dev:
   - meld
-
-node_deps:
   - gcc-c++
   - make
