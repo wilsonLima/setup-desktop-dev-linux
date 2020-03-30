@@ -78,7 +78,7 @@ Comando para executar todas as tasks:
 
 Comando para executar a tag "vim" (em caso de uso de tags, a tag "main" é obrigatória):
 
-    ansible-playbook -i <caminho_inventario> <caminho_playbook> --tags "vim, vscode"
+    ansible-playbook -i <caminho_inventario> <caminho_playbook> --tags "main, vim"
 
 
 License
