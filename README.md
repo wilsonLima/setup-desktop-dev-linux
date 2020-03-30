@@ -1,7 +1,7 @@
 setup-desktop-dev-linux
 =========
 
-Role do Ansible com passos para a pós-instalação de Desktops Linux com programas e ferramentas mais utilizadas para desenvolvimento de software.
+Role do Ansible com passos para a pós-instalação de Desktops Linux com alguns pacotes utilizados em desenvolvimento de software.
 
 Distribuições Suportadas pela Role
 ------------
