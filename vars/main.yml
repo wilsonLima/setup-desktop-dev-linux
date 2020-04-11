@@ -4,16 +4,16 @@ root_dir: "{{ home_dir }}/{{ root_env_dir }}"
 
 
 dirs :
-  - "{{ ansible_user_dir }}/{{ root_dir }}/containers"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/containers/devops"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/containers/tools"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/projects"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/repositories"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/apache"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/eclipse"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/google"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/tools/jetbrains"
-  - "{{ ansible_user_dir }}/{{ root_dir }}/workspaces"
+  - "{{ root_dir }}/containers"
+  - "{{ root_dir }}/containers/devops"
+  - "{{ root_dir }}/containers/tools"
+  - "{{ root_dir }}/projects"
+  - "{{ root_dir }}/repositories"
+  - "{{ root_dir }}/tools/apache"
+  - "{{ root_dir }}/tools/eclipse"
+  - "{{ root_dir }}/tools/google"
+  - "{{ root_dir }}/tools/jetbrains"
+  - "{{ root_dir }}/workspaces"
 
 
 pacotes_suse_dev:
