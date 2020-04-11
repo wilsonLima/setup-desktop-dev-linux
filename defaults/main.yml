@@ -1,4 +1,5 @@
 ---
-# defaults file for setup-desktop-dev-linux
 
-root_dir: "environment"
+home_dir: "{{ ansible_user_dir }}"
+
+root_env_dir: "environment"

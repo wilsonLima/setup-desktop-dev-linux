@@ -28,7 +28,8 @@ Tags da Role
 Variáveis da Role 
 --------------
 
-- root_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
+- home_dir: Diretório home para a criação dos diretórios de desenvolvimento. Valor padrão, o HOME do usuário linux utilizado no inventário.
+- root_env_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
 
 
 Dependências da Role 
@@ -84,4 +85,4 @@ Comando para executar a tag "vim" (em caso de uso de tags, a tag "main" é obrig
 License
 -------
 
-MIT License
+MIT

@@ -1,7 +1,12 @@
 ---
 
+root_dir: "{{ home_dir }}/{{ root_env_dir }}"
+
+
 dirs :
   - "{{ ansible_user_dir }}/{{ root_dir }}/containers"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/containers/devops"
+  - "{{ ansible_user_dir }}/{{ root_dir }}/containers/tools"
   - "{{ ansible_user_dir }}/{{ root_dir }}/projects"
   - "{{ ansible_user_dir }}/{{ root_dir }}/repositories"
   - "{{ ansible_user_dir }}/{{ root_dir }}/tools/apache"
