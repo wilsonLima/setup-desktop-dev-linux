@@ -17,5 +17,6 @@ dirs :
 
 
 pacotes_suse_dev:
+  - git
   - meld
   - subversion
