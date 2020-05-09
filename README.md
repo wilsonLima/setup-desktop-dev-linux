@@ -24,12 +24,32 @@ Tags da Role
 - dev: Instala os pacotes de desenvolvimento.
 - vim: Instala o editor de texto Vim.
 
+- dev-tools: Instala TODAS ferramentas de desenvolvimento da role, como Apache Maven e o Gradle.
+- maven: Baixa e descompacta a ferramenta de build Apache Maven 3.
+- gradle: Baixa e descompacta a ferramenta de build Gradle.
+
+- ide: Baixa e descompacta TODAS as IDEs da role.
+- idea: Baixa e descompacta a IDE IntelliJ IDEA.
+- pycharm: Baixa e descompacta a IDE PyCharm.
+- eclipse: Baixa e descompacta a IDE Eclipse for Enterprise Java Developers.
+- sts: Baixa e descompacta a IDE Spring Tools.
+- robo3t: Baixa e descompacta a IDE Robo 3T.
+
 
 Variáveis da Role 
 --------------
 
 - home_dir: Diretório home para a criação dos diretórios de desenvolvimento. Valor padrão, o HOME do usuário linux utilizado no inventário.
 - root_env_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
+- maven_version: Versão da ferramenta de build Apache Maven 3. Valor padrão: "3.6.3".
+- gradle_version: Versão da ferramenta de build Gradle. Valor padrão: "6.4"
+- eclipse_incubation: Indica se a versão do Eclipse a ser baixada é uma versão "incubation". Valor padrão: yes.
+- eclipse_version: Versão da IDE Eclipse for Enterprise Java Developers. Valor padrão: "2020-03"
+- idea_version: Versão da IDE IntelliJ IDEA. Valor padrão: "2020.1.1"
+- pycharm_version: Versão da IDE PyCharm. Valor padrão: "2020.1.1"
+- sts_eclipse_version: Versão da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "e4.15"
+- sts_version: Versão da IDE Spring Tools. Valor padrão: "4.6.1.RELEASE"
+- robo3t_version: Valor padrão: "1.3.1-linux-x86_64-7419c406"
 
 
 Dependências da Role 

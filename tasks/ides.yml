@@ -1,0 +1,128 @@
+---
+
+
+- name: "Criando estrutura de diretorios para a IDE IntelliJ IDEA => {{ idea_root_dir }}"
+  file:
+    path: "{{ idea_root_dir }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    recurse: yes
+  tags:
+    - ide
+    - directory
+    - idea
+
+
+- name: "Baixando e extraindo a IDE IntelliJ IDEA versão => {{ idea_version }}"
+  unarchive:
+    src: "https://download.jetbrains.com/idea/ideaIC-{{ idea_version }}.tar.gz"
+    dest: "{{ idea_root_dir }}"
+    remote_src: yes
+  tags:
+    - ide
+    - idea
+
+
+- name: "Criando estrutura de diretorios para a IDE PyCharm => {{ pycharm_root_dir }}"
+  file:
+    path: "{{ pycharm_root_dir }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    recurse: yes
+  tags:
+    - ide
+    - directory
+    - pycharm
+
+
+- name: "Baixando e extraindo a IDE PyCharm versão => {{ pycharm_version }}"
+  unarchive:
+    src: "https://download.jetbrains.com/python/pycharm-community-{{ pycharm_version }}.tar.gz"
+    dest: "{{ pycharm_root_dir }}"
+    remote_src: yes
+  tags:
+    - ide
+    - pycharm
+
+
+- name: "Criando estrutura de diretorios para a IDE Eclipse for Enterprise Java Developers => {{ eclipse_root_dir }}"
+  file:
+    path: "{{ eclipse_root_dir }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    recurse: yes
+  tags:
+    - ide
+    - directory
+    - eclipse
+
+
+- name: "Baixando e extraindo a IDE Eclipse for Enterprise Java Developers Incubation versão => {{ eclipse_version }}"
+  when: eclipse_incubation
+  unarchive:
+    src: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz&mirror_id=1"
+    dest: "{{ eclipse_root_dir }}"
+    remote_src: yes
+  tags:
+    - ide
+    - eclipse
+
+
+- name: "Baixando e extraindo a IDE Eclipse for Enterprise Java Developers versão => {{ eclipse_version }}"
+  when: not eclipse_incubation
+  unarchive:
+    src: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz&mirror_id=1"
+    dest: "{{ eclipse_root_dir }}"
+    remote_src: yes
+  tags:
+    - ide
+    - eclipse
+
+
+- name: "Criando estrutura de diretorios para a IDE Spring Tools => {{ sts_root_dir }}"
+  file:
+    path: "{{ sts_root_dir }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    recurse: yes
+  tags:
+    - ide
+    - directory
+    - sts
+
+
+- name: "Baixando e extraindo a IDE Spring Tools versão => {{ sts_version }}"
+  unarchive:
+    src: "https://download.springsource.com/release/STS4/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-4-{{ sts_version }}-{{ sts_eclipse_version }}.0-linux.gtk.x86_64.tar.gz"
+    dest: "{{ sts_root_dir }}"
+    remote_src: yes
+  tags:
+    - ide
+    - sts
+
+
+- name: "Criando estrutura de diretorios para a IDE Robo 3T => {{ robo3t_root_dir }}"
+  file:
+    path: "{{ robo3t_root_dir }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    recurse: yes
+  tags:
+    - ide
+    - directory
+    - robo3t
+
+
+- name: "Baixando e extraindo a IDE Robo 3T versão => {{ robo3t_version }}"
+  unarchive:
+    src: "https://download-test.robomongo.org/linux/robo3t-{{ robo3t_version }}.tar.gz"
+    dest: "{{ robo3t_root_dir }}"
+    remote_src: yes
+  tags:
+    - ide
+    - robo3t

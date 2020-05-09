@@ -1,6 +1,16 @@
 ---
 
+
 root_dir: "{{ home_dir }}/{{ root_env_dir }}"
+
+
+eclipse_root_dir: "{{ root_dir }}/tools/eclipse"
+gradle_root_dir: "{{ root_dir }}/tools/google/gradle"
+idea_root_dir: "{{ root_dir }}/tools/jetbrains/idea"
+maven_root_dir: "{{ root_dir }}/tools/apache/maven"
+pycharm_root_dir: "{{ root_dir }}/tools/jetbrains/pycharm"
+robo3t_root_dir: "{{ root_dir }}/tools/robomongo/robo3t"
+sts_root_dir: "{{ root_dir }}/tools/spring"
 
 
 dirs :
@@ -9,11 +19,16 @@ dirs :
   - "{{ root_dir }}/containers/tools"
   - "{{ root_dir }}/projects"
   - "{{ root_dir }}/repositories"
-  - "{{ root_dir }}/tools/apache"
-  - "{{ root_dir }}/tools/eclipse"
-  - "{{ root_dir }}/tools/google"
-  - "{{ root_dir }}/tools/jetbrains"
+  - "{{ root_dir }}/tools"
   - "{{ root_dir }}/workspaces"
+
+
+bashrc_vars:
+  - 'GRADLE_HOME={{ gradle_root_dir }}/gradle-{{ gradle_version }}'
+  - 'M2_HOME={{ maven_root_dir }}/apache-maven-{{ maven_version }}'
+  - 'export GRADLE_HOME M2_REPO'
+  - 'PATH=$PATH:$GRADLE_HOME/bin:$M2_HOME/bin'
+  - 'export PATH'
 
 
 pacotes_suse_dev:

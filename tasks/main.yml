@@ -31,3 +31,15 @@
    - "os_defaults.yml"
   tags: 
    - main
+
+
+- name: 'Incluindo tasks para a configuração de Ferramentas de Desenvolvimento'
+  include_tasks: 'tools.yml'
+  tags: 
+   - main
+
+
+- name: 'Incluindo tasks para a configuração de IDEs'
+  include_tasks: 'ides.yml'
+  tags: 
+   - main
