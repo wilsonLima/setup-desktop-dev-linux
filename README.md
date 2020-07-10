@@ -48,6 +48,8 @@ Variáveis da Role
 - idea_version: Versão da IDE IntelliJ IDEA. Valor padrão: "2020.1.1"
 - pycharm_version: Versão da IDE PyCharm. Valor padrão: "2020.1.1"
 - sts_eclipse_version: Versão da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "e4.15"
+- sts_eclipse_minor_version: Versão Minor da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "0".
+- sts_major_version: Versão Major da IDE Spring Tools. Valor padrão: "4".
 - sts_version: Versão da IDE Spring Tools. Valor padrão: "4.6.1.RELEASE"
 - robo3t_version: Valor padrão: "1.3.1-linux-x86_64-7419c406"
 

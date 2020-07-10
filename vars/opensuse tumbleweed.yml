@@ -1,4 +1,0 @@
----
-
-nodejs_suse_version: "12"
-nodejs_pac: "nodejs{{ nodejs_suse_version }}"

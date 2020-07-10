@@ -6,7 +6,7 @@
     path: "{{ idea_root_dir }}"
     state: directory
     owner: "{{ ansible_user_id }}"
-    mode: 0775
+    mode: "0775"
     recurse: yes
   tags:
     - ide
@@ -29,7 +29,7 @@
     path: "{{ pycharm_root_dir }}"
     state: directory
     owner: "{{ ansible_user_id }}"
-    mode: 0775
+    mode: "0775"
     recurse: yes
   tags:
     - ide
@@ -52,7 +52,7 @@
     path: "{{ eclipse_root_dir }}"
     state: directory
     owner: "{{ ansible_user_id }}"
-    mode: 0775
+    mode: "0775"
     recurse: yes
   tags:
     - ide
@@ -87,7 +87,7 @@
     path: "{{ sts_root_dir }}"
     state: directory
     owner: "{{ ansible_user_id }}"
-    mode: 0775
+    mode: "0775"
     recurse: yes
   tags:
     - ide
@@ -97,7 +97,7 @@
 
 - name: "Baixando e extraindo a IDE Spring Tools versão => {{ sts_version }}"
   unarchive:
-    src: "https://download.springsource.com/release/STS4/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-4-{{ sts_version }}-{{ sts_eclipse_version }}.0-linux.gtk.x86_64.tar.gz"
+    src: "https://download.springsource.com/release/STS4/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
     dest: "{{ sts_root_dir }}"
     remote_src: yes
   tags:
@@ -110,7 +110,7 @@
     path: "{{ robo3t_root_dir }}"
     state: directory
     owner: "{{ ansible_user_id }}"
-    mode: 0775
+    mode: "0775"
     recurse: yes
   tags:
     - ide
