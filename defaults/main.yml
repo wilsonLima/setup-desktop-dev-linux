@@ -6,7 +6,7 @@ root_env_dir: "environment"
 
 
 maven_version: "3.6.3"
-gradle_version: "6.4"
+gradle_version: "6.5.1"
 
 eclipse_incubation: no
 
