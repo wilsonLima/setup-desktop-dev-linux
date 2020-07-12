@@ -97,7 +97,7 @@
 
 - name: "Baixando e extraindo a IDE Spring Tools versão => {{ sts_version }}"
   unarchive:
-    src: "https://download.springsource.com/release/STS4/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
+    src: "https://download.springsource.com/release/STS{{ sts_major_version }}/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
     dest: "{{ sts_root_dir }}"
     remote_src: yes
   tags:
