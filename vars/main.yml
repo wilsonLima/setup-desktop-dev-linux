@@ -26,7 +26,7 @@ dirs :
 bashrc_vars:
   - 'GRADLE_HOME={{ gradle_root_dir }}/gradle-{{ gradle_version }}'
   - 'M2_HOME={{ maven_root_dir }}/apache-maven-{{ maven_version }}'
-  - 'export GRADLE_HOME M2_REPO'
+  - 'export GRADLE_HOME M2_HOME'
   - 'PATH=$PATH:$GRADLE_HOME/bin:$M2_HOME/bin'
   - 'export PATH'
 
