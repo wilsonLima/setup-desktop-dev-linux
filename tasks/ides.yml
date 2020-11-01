@@ -14,11 +14,30 @@
     - idea
 
 
-- name: "Baixando e extraindo a IDE IntelliJ IDEA versão => {{ idea_version }}"
+- name: "Baixando a IDE IntelliJ IDEA Community versão => {{ idea_version }}"
+  get_url:
+    url: "https://download.jetbrains.com/idea/ideaIC-{{ idea_version }}.tar.gz"
+    dest: "{{ idea_root_dir }}"
+    timeout: 60
+  tags:
+    - ide
+    - idea
+
+
+- name: "Extraindo a IDE IntelliJ IDEA Community versão => {{ idea_version }}"
   unarchive:
-    src: "https://download.jetbrains.com/idea/ideaIC-{{ idea_version }}.tar.gz"
+    src: "{{ idea_root_dir }}/ideaIC-{{ idea_version }}.tar.gz"
     dest: "{{ idea_root_dir }}"
     remote_src: yes
+  tags:
+    - ide
+    - idea
+
+
+- name: 'Removendo localmente os binários utilizados na instalação da IDE IntelliJ IDEA Community'
+  file:
+    path: "{{ idea_root_dir }}/ideaIC-{{ idea_version }}.tar.gz"
+    state: absent
   tags:
     - ide
     - idea
@@ -37,11 +56,30 @@
     - pycharm
 
 
-- name: "Baixando e extraindo a IDE PyCharm versão => {{ pycharm_version }}"
+- name: "Baixando a IDE PyCharm versão => {{ pycharm_version }}"
+  get_url:
+    url: "https://download.jetbrains.com/python/pycharm-community-{{ pycharm_version }}.tar.gz"
+    dest: "{{ pycharm_root_dir }}"
+    timeout: 60
+  tags:
+    - ide
+    - pycharm
+
+
+- name: "Extraindo a IDE PyCharm versão => {{ pycharm_version }}"
   unarchive:
-    src: "https://download.jetbrains.com/python/pycharm-community-{{ pycharm_version }}.tar.gz"
+    src: "{{ pycharm_root_dir }}/pycharm-community-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_root_dir }}"
     remote_src: yes
+  tags:
+    - ide
+    - pycharm
+
+
+- name: 'Removendo localmente os binários utilizados na instalação da IDE PyCharm'
+  file:
+    path: "{{ pycharm_root_dir }}/pycharm-community-{{ pycharm_version }}.tar.gz"
+    state: absent
   tags:
     - ide
     - pycharm
@@ -60,10 +98,21 @@
     - eclipse
 
 
-- name: "Baixando e extraindo a IDE Eclipse for Enterprise Java Developers Incubation versão => {{ eclipse_version }}"
+- name: "Baixando a IDE Eclipse for Enterprise Java Developers Incubation versão => {{ eclipse_version }}"
+  when: eclipse_incubation
+  get_url:
+    url: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz&mirror_id=1"
+    dest: "{{ eclipse_root_dir }}"
+    timeout: 60
+  tags:
+    - ide
+    - eclipse
+
+
+- name: "Extraindo a IDE Eclipse for Enterprise Java Developers Incubation versão => {{ eclipse_version }}"
   when: eclipse_incubation
   unarchive:
-    src: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz&mirror_id=1"
+    src: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz"
     dest: "{{ eclipse_root_dir }}"
     remote_src: yes
   tags:
@@ -71,12 +120,43 @@
     - eclipse
 
 
-- name: "Baixando e extraindo a IDE Eclipse for Enterprise Java Developers versão => {{ eclipse_version }}"
+- name: 'Removendo localmente os binários utilizados na instalação da IDE Eclipse for Enterprise Java Developers Incubation'
+  when: eclipse_incubation
+  file:
+    path: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz"
+    state: absent
+  tags:
+    - ide
+    - eclipse
+
+
+- name: "Baixando a IDE Eclipse for Enterprise Java Developers versão => {{ eclipse_version }}"
+  when: not eclipse_incubation
+  get_url:
+    url: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz&mirror_id=1"
+    dest: "{{ eclipse_root_dir }}"
+    timeout: 60
+  tags:
+    - ide
+    - eclipse
+
+
+- name: "Extraindo a IDE Eclipse for Enterprise Java Developers versão => {{ eclipse_version }}"
   when: not eclipse_incubation
   unarchive:
-    src: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz&mirror_id=1"
+    src: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz"
     dest: "{{ eclipse_root_dir }}"
     remote_src: yes
+  tags:
+    - ide
+    - eclipse
+
+
+- name: 'Removendo localmente os binários utilizados na instalação da IDE Eclipse for Enterprise Java Developers'
+  when: not eclipse_incubation
+  file:
+    path: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz"
+    state: absent
   tags:
     - ide
     - eclipse
@@ -95,11 +175,29 @@
     - sts
 
 
-- name: "Baixando e extraindo a IDE Spring Tools {{ sts_major_version }} versão => {{ sts_version }}"
+- name: "Baixando a IDE Spring Tools {{ sts_major_version }} versão => {{ sts_version }}"
+  get_url:
+    url: "https://download.springsource.com/release/STS{{ sts_major_version }}/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
+    dest: "{{ sts_root_dir }}"
+    timeout: 60
+  tags:
+    - ide
+    - sts
+
+
+- name: "Extraindo a IDE Spring Tools {{ sts_major_version }} versão => {{ sts_version }}"
   unarchive:
-    src: "https://download.springsource.com/release/STS{{ sts_major_version }}/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
+    src: "{{ sts_root_dir }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
     dest: "{{ sts_root_dir }}"
     remote_src: yes
+  tags:
+    - ide
+    - sts
+
+- name: 'Removendo localmente os binários utilizados na instalação da IDE Spring Tools {{ sts_major_version }}'
+  file:
+    path: "{{ sts_root_dir }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
+    state: absent
   tags:
     - ide
     - sts
@@ -118,11 +216,30 @@
     - robo3t
 
 
-- name: "Baixando e extraindo a IDE Robo 3T versão => {{ robo3t_version }}"
+- name: "Baixando a IDE Robo 3T versão => {{ robo3t_version }}"
+  get_url:
+    url: "https://download.studio3t.com/robomongo/linux/robo3t-{{ robo3t_version }}.tar.gz"
+    dest: "{{ robo3t_root_dir }}"
+    timeout: 60
+  tags:
+    - ide
+    - robo3t
+
+
+- name: "Extraindo a IDE Robo 3T versão => {{ robo3t_version }}"
   unarchive:
-    src: "https://download-test.robomongo.org/linux/robo3t-{{ robo3t_version }}.tar.gz"
+    src: "{{ robo3t_root_dir }}/robo3t-{{ robo3t_version }}.tar.gz"
     dest: "{{ robo3t_root_dir }}"
     remote_src: yes
+  tags:
+    - ide
+    - robo3t
+
+
+- name: 'Removendo localmente os binários utilizados na instalação da IDE Robo 3T'
+  file:
+    path: "{{ robo3t_root_dir }}/robo3t-{{ robo3t_version }}.tar.gz"
+    state: absent
   tags:
     - ide
     - robo3t

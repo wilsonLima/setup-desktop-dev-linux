@@ -33,4 +33,5 @@ bashrc_vars:
 
 pacotes_suse_dev:
   - meld
+  - sshpass
   - subversion
