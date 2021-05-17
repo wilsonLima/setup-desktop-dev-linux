@@ -5,19 +5,19 @@ home_dir: "{{ ansible_user_dir }}"
 root_env_dir: "environment"
 
 
-maven_version: "3.6.3"
-gradle_version: "6.7"
+maven_version: "3.8.1"
+gradle_version: "7.0.2"
 
 
 eclipse_incubation: no
-eclipse_version: "2020-09"
+eclipse_version: "2021-03"
 
 
-idea_version: "2020.2.3"
-pycharm_version: "2020.2.3"
+idea_version: "2021.1.1"
+pycharm_version: "2021.1.1"
 
-sts_eclipse_version: "e4.17"
+sts_eclipse_version: "e4.19"
 sts_eclipse_minor_version: "0"
 sts_major_version: "4"
-sts_version: "4.8.1.RELEASE"
-robo3t_version: "1.4.2-linux-x86_64-8650949"
+sts_version: "4.10.0.RELEASE"
+robo3t_version: "1.4.3-linux-x86_64-48f7dfd"
