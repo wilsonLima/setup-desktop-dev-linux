@@ -1,13 +1,22 @@
 ---
 
 
+- name: "Atualizando apt cache"
+  apt: 
+    update_cache: yes 
+    cache_valid_time: 7200
+  become: true
+  tags:
+    - dev
+    - vim
+
+
 # Pacotes Dev
 
 - name: Instalando os pacotes Dev
   apt:
     name: "{{ pacotes_dev }}"
     state: present
-    update_cache: yes
   become: true
   tags:
     - dev
@@ -19,7 +28,6 @@
   apt:
     name: vim
     state: present
-    update_cache: yes
   become: true
   tags:
     - vim
