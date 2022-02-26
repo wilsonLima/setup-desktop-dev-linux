@@ -41,17 +41,17 @@ Variáveis da Role
 
 - home_dir: Diretório home para a criação dos diretórios de desenvolvimento. Valor padrão, o HOME do usuário linux utilizado no inventário.
 - root_env_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
-- maven_version: Versão da ferramenta de build Apache Maven 3. Valor padrão: "3.8.1".
-- gradle_version: Versão da ferramenta de build Gradle. Valor padrão: "7.1.1"
+- maven_version: Versão da ferramenta de build Apache Maven 3. Valor padrão: "3.8.4".
+- gradle_version: Versão da ferramenta de build Gradle. Valor padrão: "7.4"
 - eclipse_incubation: Indica se a versão do Eclipse a ser baixada é uma versão "incubation". Valor padrão: no.
-- eclipse_version: Versão da IDE Eclipse for Enterprise Java Developers. Valor padrão: "2021-06"
-- idea_version: Versão da IDE IntelliJ IDEA. Valor padrão: "2021.2"
-- pycharm_version: Versão da IDE PyCharm. Valor padrão: "2021.2"
-- sts_eclipse_version: Versão da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "e4.20"
+- eclipse_version: Versão da IDE Eclipse for Enterprise Java Developers. Valor padrão: "2021-12"
+- idea_version: Versão da IDE IntelliJ IDEA. Valor padrão: "2021.3.2"
+- pycharm_version: Versão da IDE PyCharm. Valor padrão: "2021.3.2"
+- sts_eclipse_version: Versão da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "e4.22"
 - sts_eclipse_minor_version: Versão Minor da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "0".
 - sts_major_version: Versão Major da IDE Spring Tools. Valor padrão: "4".
-- sts_version: Versão da IDE Spring Tools. Valor padrão: "4.11.0.RELEASE"
-- robo3t_version: Valor padrão: "1.3.1-linux-x86_64-7419c406"
+- sts_version: Versão da IDE Spring Tools. Valor padrão: "4.13.1.RELEASE"
+- robo3t_version: Valor padrão: "1.4.4-linux-x86_64-e6ac9ec"
 
 
 Dependências da Role 
