@@ -2,6 +2,7 @@
 
 
 - name: "Criando estrutura de diretorios para a IDE IntelliJ IDEA => {{ idea_root_dir }}"
+  when: download_intellij_idea in yes_options
   file:
     path: "{{ idea_root_dir }}"
     state: directory
@@ -15,6 +16,7 @@
 
 
 - name: "Baixando a IDE IntelliJ IDEA Community versão => {{ idea_version }}"
+  when: download_intellij_idea in yes_options
   get_url:
     url: "https://download.jetbrains.com/idea/ideaIC-{{ idea_version }}.tar.gz"
     dest: "{{ idea_root_dir }}"
@@ -25,6 +27,7 @@
 
 
 - name: "Extraindo a IDE IntelliJ IDEA Community versão => {{ idea_version }}"
+  when: download_intellij_idea in yes_options
   unarchive:
     src: "{{ idea_root_dir }}/ideaIC-{{ idea_version }}.tar.gz"
     dest: "{{ idea_root_dir }}"
@@ -35,6 +38,7 @@
 
 
 - name: 'Removendo localmente os binários utilizados na instalação da IDE IntelliJ IDEA Community'
+  when: download_intellij_idea in yes_options
   file:
     path: "{{ idea_root_dir }}/ideaIC-{{ idea_version }}.tar.gz"
     state: absent
@@ -43,7 +47,8 @@
     - idea
 
 
-- name: "Criando estrutura de diretorios para a IDE PyCharm => {{ pycharm_root_dir }}"
+- name: "Criando estrutura de diretorios para a IDE PyCharm Community => {{ pycharm_root_dir }}"
+  when: download_pycharm in yes_options
   file:
     path: "{{ pycharm_root_dir }}"
     state: directory
@@ -56,7 +61,8 @@
     - pycharm
 
 
-- name: "Baixando a IDE PyCharm versão => {{ pycharm_version }}"
+- name: "Baixando a IDE PyCharm Community versão => {{ pycharm_version }}"
+  when: download_pycharm in yes_options
   get_url:
     url: "https://download.jetbrains.com/python/pycharm-community-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_root_dir }}"
@@ -66,7 +72,8 @@
     - pycharm
 
 
-- name: "Extraindo a IDE PyCharm versão => {{ pycharm_version }}"
+- name: "Extraindo a IDE PyCharm Community versão => {{ pycharm_version }}"
+  when: download_pycharm in yes_options
   unarchive:
     src: "{{ pycharm_root_dir }}/pycharm-community-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_root_dir }}"
@@ -76,7 +83,8 @@
     - pycharm
 
 
-- name: 'Removendo localmente os binários utilizados na instalação da IDE PyCharm'
+- name: 'Removendo localmente os binários utilizados na instalação da IDE PyCharm Community'
+  when: download_pycharm in yes_options
   file:
     path: "{{ pycharm_root_dir }}/pycharm-community-{{ pycharm_version }}.tar.gz"
     state: absent
@@ -86,6 +94,7 @@
 
 
 - name: "Criando estrutura de diretorios para a IDE Eclipse for Enterprise Java Developers => {{ eclipse_root_dir }}"
+  when: download_eclipse in yes_options
   file:
     path: "{{ eclipse_root_dir }}"
     state: directory
@@ -99,7 +108,7 @@
 
 
 - name: "Baixando a IDE Eclipse for Enterprise Java Developers Incubation versão => {{ eclipse_version }}"
-  when: eclipse_incubation
+  when: eclipse_incubation and download_eclipse in yes_options
   get_url:
     url: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz&mirror_id=1"
     dest: "{{ eclipse_root_dir }}"
@@ -110,7 +119,7 @@
 
 
 - name: "Extraindo a IDE Eclipse for Enterprise Java Developers Incubation versão => {{ eclipse_version }}"
-  when: eclipse_incubation
+  when: eclipse_incubation and download_eclipse in yes_options
   unarchive:
     src: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz"
     dest: "{{ eclipse_root_dir }}"
@@ -121,7 +130,7 @@
 
 
 - name: 'Removendo localmente os binários utilizados na instalação da IDE Eclipse for Enterprise Java Developers Incubation'
-  when: eclipse_incubation
+  when: eclipse_incubation and download_eclipse in yes_options
   file:
     path: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-incubation-linux-gtk-x86_64.tar.gz"
     state: absent
@@ -131,7 +140,7 @@
 
 
 - name: "Baixando a IDE Eclipse for Enterprise Java Developers versão => {{ eclipse_version }}"
-  when: not eclipse_incubation
+  when: not eclipse_incubation and download_eclipse in yes_options
   get_url:
     url: "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/{{ eclipse_version }}/R/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz&mirror_id=1"
     dest: "{{ eclipse_root_dir }}"
@@ -142,7 +151,7 @@
 
 
 - name: "Extraindo a IDE Eclipse for Enterprise Java Developers versão => {{ eclipse_version }}"
-  when: not eclipse_incubation
+  when: not eclipse_incubation and download_eclipse in yes_options
   unarchive:
     src: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz"
     dest: "{{ eclipse_root_dir }}"
@@ -153,7 +162,7 @@
 
 
 - name: 'Removendo localmente os binários utilizados na instalação da IDE Eclipse for Enterprise Java Developers'
-  when: not eclipse_incubation
+  when: not eclipse_incubation and download_eclipse in yes_options
   file:
     path: "{{ eclipse_root_dir }}/eclipse-jee-{{ eclipse_version }}-R-linux-gtk-x86_64.tar.gz"
     state: absent
@@ -163,6 +172,7 @@
 
 
 - name: "Criando estrutura de diretorios para a IDE Spring Tools => {{ sts_root_dir }}"
+  when: download_eclipse_sts in yes_options
   file:
     path: "{{ sts_root_dir }}"
     state: directory
@@ -176,6 +186,7 @@
 
 
 - name: "Baixando a IDE Spring Tools {{ sts_major_version }} versão => {{ sts_version }}"
+  when: download_eclipse_sts in yes_options
   get_url:
     url: "https://download.springsource.com/release/STS{{ sts_major_version }}/{{ sts_version }}/dist/{{ sts_eclipse_version }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
     dest: "{{ sts_root_dir }}"
@@ -186,6 +197,7 @@
 
 
 - name: "Extraindo a IDE Spring Tools {{ sts_major_version }} versão => {{ sts_version }}"
+  when: download_eclipse_sts in yes_options
   unarchive:
     src: "{{ sts_root_dir }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
     dest: "{{ sts_root_dir }}"
@@ -195,6 +207,7 @@
     - sts
 
 - name: 'Removendo localmente os binários utilizados na instalação da IDE Spring Tools {{ sts_major_version }}'
+  when: download_eclipse_sts in yes_options
   file:
     path: "{{ sts_root_dir }}/spring-tool-suite-{{ sts_major_version }}-{{ sts_version }}-{{ sts_eclipse_version }}.{{ sts_eclipse_minor_version }}-linux.gtk.x86_64.tar.gz"
     state: absent

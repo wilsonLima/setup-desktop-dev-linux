@@ -34,3 +34,16 @@ pacotes_suse_dev:
   - meld
   - sshpass
   - subversion
+
+
+yes_options:
+  - 'Y'
+  - 'y'
+  - 'Yes'
+  - 'yes'
+  - 'YES'
+  - 'S'
+  - 's'
+  - 'Sim'
+  - 'SIM'
+  - 'sim'
