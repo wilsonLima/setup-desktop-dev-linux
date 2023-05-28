@@ -40,20 +40,20 @@ Variáveis da Role
 
 - home_dir: Diretório home para a criação dos diretórios de desenvolvimento. Valor padrão, o HOME do usuário linux utilizado no inventário.
 - root_env_dir: Nome do diretório raiz de desenvolvimento que fica dentro do HOME do usuário. Valor padrão: environment.
-- maven_version: Versão da ferramenta de build Apache Maven 3. Valor padrão: "3.8.7".
-- gradle_version: Versão da ferramenta de build Gradle. Valor padrão: "7.6"
+- maven_version: Versão da ferramenta de build Apache Maven 3. Valor padrão: "3.9.2".
+- gradle_version: Versão da ferramenta de build Gradle. Valor padrão: "8.1.1"
 - download_eclipse: Indica se deve realizar o download da IDE Eclipse for Enterprise Java Developers. Possíveis valores: Y, y, Yes, yes, YES, S, s, Sim, SIM, sim, Não, não, No ou no. Valor Padrão: Y
 - eclipse_incubation: Indica se a versão do Eclipse a ser baixada é uma versão "incubation". Valor padrão: no.
-- eclipse_version: Versão da IDE Eclipse for Enterprise Java Developers. Valor padrão: "2022-12"
+- eclipse_version: Versão da IDE Eclipse for Enterprise Java Developers. Valor padrão: "2023-03"
 - download_intellij_idea: Indica se deve realizar o download da IDE IntelliJ IDEA Community. Possíveis valores: Y, y, Yes, yes, YES, S, s, Sim, SIM, sim, Não, não, No ou no. Valor Padrão: Y
-- idea_version: Versão da IDE IntelliJ IDEA. Valor padrão: "2022.3.1"
+- idea_version: Versão da IDE IntelliJ IDEA. Valor padrão: "2023.1.2"
 - download_pycharm: Indica se deve realizar o download da IDE PyCharm Community. Possíveis valores: Y, y, Yes, yes, YES, S, s, Sim, SIM, sim, Não, não, No ou no. Valor Padrão: Y
-- pycharm_version: Versão da IDE PyCharm. Valor padrão: "2022.3"
+- pycharm_version: Versão da IDE PyCharm. Valor padrão: "2023.1.2"
 - download_eclipse_sts: Indica se deve realizar o download da IDE Spring Tools. Possíveis valores: Y, y, Yes, yes, YES, S, s, Sim, SIM, sim, Não, não, No ou no. Valor Padrão: Y
-- sts_eclipse_version: Versão da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "e4.26"
+- sts_eclipse_version: Versão da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "e4.27"
 - sts_eclipse_minor_version: Versão Minor da IDE Eclipse em que a IDE Spring Tools a ser baixada foi baseada. Valor padrão: "0".
 - sts_major_version: Versão Major da IDE Spring Tools. Valor padrão: "4".
-- sts_version: Versão da IDE Spring Tools. Valor padrão: "4.17.0.RELEASE"
+- sts_version: Versão da IDE Spring Tools. Valor padrão: "4.18.1.RELEASE"
 
 
 Dependências da Role 
