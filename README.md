@@ -6,12 +6,11 @@ Role do Ansible com passos para a pós-instalação de Desktops Linux com alguns
 Distribuições Suportadas pela Role
 ------------
 
-- Fedora 28 ou superior
-- Linux Mint LMDE 3 ou superior
-- Linux Mint 19.1 ou superior
-- openSUSE Leap 15.0 ou superior
+- Fedora 37 ou superior
+- Linux Mint 21.1 ou superior
+- openSUSE Leap 15.4 ou superior
 - openSUSE Tumbleweed
-- Ubuntu 18.04 ou superior
+- Ubuntu 22.10 ou superior
 
 
 Tags da Role 
