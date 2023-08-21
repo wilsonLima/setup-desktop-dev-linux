@@ -4,8 +4,8 @@ home_dir: "{{ ansible_user_dir }}"
 
 root_env_dir: "environment"
 
-maven_version: "3.9.2"
-gradle_version: "8.1.1"
+maven_version: "3.9.4"
+gradle_version: "8.3"
 
 download_eclipse: "Y"
 download_intellij_idea: "Y"
@@ -13,12 +13,12 @@ download_pycharm: "Y"
 download_eclipse_sts: "Y"
 
 eclipse_incubation: no
-eclipse_version: "2023-03"
+eclipse_version: "2023-06"
 
-idea_version: "2023.1.2"
-pycharm_version: "2023.1.2"
+idea_version: "2023.2"
+pycharm_version: "2023.2"
 
-sts_eclipse_version: "e4.27"
+sts_eclipse_version: "e4.28"
 sts_eclipse_minor_version: "0"
 sts_major_version: "4"
-sts_version: "4.18.1.RELEASE"
+sts_version: "4.19.1.RELEASE"
